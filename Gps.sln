@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GpsUdpReceiver", "GpsUdpReceiver\GpsUdpReceiver.csproj", "{76BAA904-8CC8-4E09-A8CF-83958050A29D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gps.Api", "Gps.Api\Gps.Api.csproj", "{97888611-DE5C-437B-903F-DE6FB733C143}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{560224EA-96C9-495D-A0B5-764E38C068E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{560224EA-96C9-495D-A0B5-764E38C068E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{560224EA-96C9-495D-A0B5-764E38C068E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{560224EA-96C9-495D-A0B5-764E38C068E5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{027E518D-03DA-48B7-A251-85A6AD6DE86F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{027E518D-03DA-48B7-A251-85A6AD6DE86F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{027E518D-03DA-48B7-A251-85A6AD6DE86F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{027E518D-03DA-48B7-A251-85A6AD6DE86F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{76BAA904-8CC8-4E09-A8CF-83958050A29D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{76BAA904-8CC8-4E09-A8CF-83958050A29D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{76BAA904-8CC8-4E09-A8CF-83958050A29D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{76BAA904-8CC8-4E09-A8CF-83958050A29D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{97888611-DE5C-437B-903F-DE6FB733C143}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{97888611-DE5C-437B-903F-DE6FB733C143}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{97888611-DE5C-437B-903F-DE6FB733C143}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{97888611-DE5C-437B-903F-DE6FB733C143}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
