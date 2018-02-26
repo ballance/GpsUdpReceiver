@@ -7,10 +7,12 @@ namespace GpsUdpReceiver
     public class GpsPersister
     {
         private readonly string _connectionString;
+        private LogWriter _logWriter;
 
         public GpsPersister(string connectionString)
         {
             _connectionString = string.IsNullOrEmpty(connectionString) ? "" : connectionString;
+            _logWriter = new LogWriter();
         }
 
         public bool PersistGpsCoordinate(GpsCoordinate gpsCoordinate)
@@ -38,6 +40,8 @@ namespace GpsUdpReceiver
             catch (Exception e)
             {
                 PersistError(e, "Error storing GPS coordinate");
+                _logWriter.Log(e + "Error storing GPS coordinate");
+                
                 Console.WriteLine(e);
                 return false;
             }
@@ -67,6 +71,7 @@ namespace GpsUdpReceiver
                 }
                 catch (Exception e)
                 {
+                    _logWriter.Log(e + "Error storing GPS coordinate");
                     Console.WriteLine(e);
                 }
             });
