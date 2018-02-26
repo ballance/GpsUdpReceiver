@@ -34,10 +34,10 @@ namespace GpsUdpReceiver
             
             while (true)
             {
-                Console.Write("Press `X` to exit.");
-                var keyEntered = Console.ReadKey();
-                if (keyEntered.Key == ConsoleKey.X)
-                    break;
+//                Console.Write("Press `X` to exit.");
+//                var keyEntered = Console.ReadKey();
+//                if (keyEntered.Key == ConsoleKey.X)
+//                    break;
             }
 
         }
