@@ -15,12 +15,14 @@ namespace GpsUdpReceiver
         private bool _isListening = false;
         private List<GpsCoordinate> _gpsCoordinatesBuffer;
         private GpsPersister _gpsPersister;
+        private int _portToListenOn;
 
-        public UdpReceiver(GpsPersister gpsPersister)
+        public UdpReceiver(GpsPersister gpsPersister, int portToListenOn)
         {
             _runningLog = new StringBuilder();
             _gpsCoordinatesBuffer = new List<GpsCoordinate>();
             _gpsPersister = gpsPersister;
+            _portToListenOn = portToListenOn;
         }
 
         public string GetCurrentLog()
@@ -38,7 +40,9 @@ namespace GpsUdpReceiver
         {
             if (_isListening)
             {
-                throw new ApplicationException("Already listening.");
+                var errorText = $"Already listening on port {_portToListenOn}.";
+                _gpsPersister.PersistError(new HttpListenerException(500), errorText);
+                Console.WriteLine(errorText);
                 return;
             }
 
@@ -46,59 +50,38 @@ namespace GpsUdpReceiver
             {
                 _isListening = true;
 
-//                await Task.Run(async () =>
-//                {
-//                    while (true)
-//                    {
-//                        if (_runningLog.Length <= 0)
-//                        {
-//                            Console.WriteLine("No data received from GPS device...");
-//                        }
-//                        else
-//                        {
-//                            Console.WriteLine("We can haz GPS data from GPS device...");
-////                            Console.WriteLine(_runningLog);
-//                        }
-//
-//                        await Task.Delay(1000);
-//                    }
-//                });
 
-//                Task.Run(() =>
-//                {
-                using (var udpClient = new UdpClient(10101))
+                await Task.Run(() =>
+                {
+                using (var udpClient = new UdpClient(_portToListenOn))
                 {
                     while (true)
                     {
                         var remoteEndPoint = new IPEndPoint(IPAddress.Any, 0);
                         var receivedResults = udpClient.Receive(ref remoteEndPoint);
 
-                        var _currentLog = Encoding.ASCII.GetString(receivedResults);
-                        _runningLog.Append(_currentLog);
-                        if (_currentLog.Length > 0)
+                        var currentLog = Encoding.ASCII.GetString(receivedResults);
+                        _runningLog.Append(currentLog);
+                        if (currentLog.Length > 0)
                         {
-                            ProcessUDPDatagram(_currentLog);
-                            //Console.WriteLine($"len: {_currentLog.Length}");
-                            //Console.WriteLine(_currentLog);
+                            ProcessUdpDatagram(currentLog);
                         }
-
-                        //await Task.Delay(1000);
                     }
                 }
 
-                //});
+                });
             }
             catch (Exception e)
             {
+                _gpsPersister.PersistError(e, "Error capturing UDP data");
                 Console.WriteLine(e);
-                // TODO: Better error handling here
                 _isListening = false;
             }
         }
 
-        private void ProcessUDPDatagram(string currentLog)
+        // TODO: Find a way to capture tenantId.  Perhaps have a dedicated GPS reciever per client?
+        private void ProcessUdpDatagram(string currentLog)
         {
-            var gpsCoordinateList = new List<GpsCoordinate>();
             var splitted = currentLog.Split(',').Select(p => p.Trim()).ToList();
 
             if (false == splitted.Contains("1"))
@@ -122,6 +105,7 @@ namespace GpsUdpReceiver
                 }
                 catch (Exception e)
                 {
+                    _gpsPersister.PersistError(e, "Failed to capture part of gps coordinate, the parts that succeeded were saved");     
                     Console.WriteLine("Failed to capture part of gps coordinate, the parts that succeeded were saved");
                 }
             }

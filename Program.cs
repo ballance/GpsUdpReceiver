@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Threading.Tasks;
 using Microsoft.Extensions.Configuration;
 
 namespace GpsUdpReceiver
@@ -18,34 +19,47 @@ namespace GpsUdpReceiver
                 .AddJsonFile("appsettings.prod.json");
             
             Configuration = builder.Build();
+
+            var runner = new Runner();
+         
             var connectionString = Configuration["ConnectionString"];
+            var portToListenOn = Convert.ToInt32(Configuration["UdpPortToListenOn"]);
+            var gpsPersister = new GpsPersister(connectionString);
+         
             
+            Task.Run(async () =>
+            {
+                await runner.Run(gpsPersister, portToListenOn);
+            });
+            
+            while (true)
+            {
+                Console.Write("Press `X` to exit.");
+                var keyEntered = Console.ReadKey();
+                if (keyEntered.Key == ConsoleKey.X)
+                    break;
+            }
+
+        }
+    }
+
+    public class Runner
+    {
+        public async Task Run(GpsPersister gpsPersister, int portToListenOn)
+        {
             Console.WriteLine($"Starting UDP listener {DateTime.Now}!");
 
-            var currentLogSize = 0;
-            var previousLogSize = 0;
-
             // TODO: Inject this
-            var gpsPersister = new GpsPersister(Configuration["ConnectionString"]);
-            
-            var udpReceiver = new UdpReceiver(gpsPersister);
-            
+            var udpReceiver = new UdpReceiver(gpsPersister, portToListenOn);
 
             try
             {
-                udpReceiver.Listen();
+                await udpReceiver.Listen();
             }
             catch (Exception e)
             {
                 Console.WriteLine(e);
             }
-
-            while (true)
-            {
-             //   Console.WriteLine(udpReceiver.GetCurrentLog());
-            }
         }
     }
-
-    
 }
