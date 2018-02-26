@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\home\code\gps" t="IncludeFlat">
+      <e p="Gps.Api" t="IncludeRecursive">
+        <e p="appsettings.json" t="Include" />
+        <e p="appsettings.prod.json" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Controllers" t="Include">
+          <e p="GpsController.cs" t="Include" />
+        </e>
+        <e p="docs" t="Include" />
+        <e p="Gps.Api.csproj" t="IncludeRecursive" />
+        <e p="GpsDataRetriever.cs" t="Include" />
+        <e p="Models" t="Include">
+          <e p="GPSCoordinate.cs" t="Include" />
+        </e>
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netcoreapp2.0" t="Include">
+              <e p="Gps.Api.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="Program.cs" t="Include" />
+        <e p="Startup.cs" t="Include" />
+        <e p="wwwroot" t="Include" />
+      </e>
+      <e p="Gps.sln" t="IncludeFlat" />
+      <e p="GpsUdpReceiver" t="IncludeRecursive">
+        <e p=".gitignore" t="Include" />
+        <e p="appsettings.json" t="Include" />
+        <e p="appsettings.prod.json" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="GPSCoordinate.cs" t="Include" />
+        <e p="GpsPersister.cs" t="Include" />
+        <e p="GpsUdpReceiver.csproj" t="IncludeRecursive" />
+        <e p="LICENSE" t="Include" />
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netcoreapp2.0" t="Include">
+              <e p="GpsUdpReceiver.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="Program.cs" t="Include" />
+        <e p="ScratchSql.sql" t="Include" />
+        <e p="UdpReceiver.cs" t="Include" />
+      </e>
+      <e p="packages" t="ExcludeRecursive" />
+    </e>
+    <e p="C:\Users\ballance\.nuget\packages\mysql.data\6.10.6\contentFiles\any\netcoreapp2.0\app.config.transform" t="Include" />
+    <e p="C:\Users\ballance\.nuget\packages\mysql.data\6.10.6\contentFiles\any\netcoreapp2.0\docs\MySqlCommand.xml" t="Include" />
+    <e p="C:\Users\ballance\.nuget\packages\mysql.data\6.10.6\contentFiles\any\netcoreapp2.0\docs\MySqlCommandBuilder.xml" t="Include" />
+    <e p="C:\Users\ballance\.nuget\packages\mysql.data\6.10.6\contentFiles\any\netcoreapp2.0\docs\MySqlConnection.xml" t="Include" />
+    <e p="C:\Users\ballance\.nuget\packages\mysql.data\6.10.6\contentFiles\any\netcoreapp2.0\docs\MySqlConnectionStringBuilder.xml" t="Include" />
+    <e p="C:\Users\ballance\.nuget\packages\mysql.data\6.10.6\contentFiles\any\netcoreapp2.0\docs\MySqlDataAdapter.xml" t="Include" />
+    <e p="C:\Users\ballance\.nuget\packages\mysql.data\6.10.6\contentFiles\any\netcoreapp2.0\docs\MySqlDataReader.xml" t="Include" />
+    <e p="C:\Users\ballance\.nuget\packages\mysql.data\6.10.6\contentFiles\any\netcoreapp2.0\docs\MySqlException.xml" t="Include" />
+    <e p="C:\Users\ballance\.nuget\packages\mysql.data\6.10.6\contentFiles\any\netcoreapp2.0\docs\MySqlHelper.xml" t="Include" />
+    <e p="C:\Users\ballance\.nuget\packages\mysql.data\6.10.6\contentFiles\any\netcoreapp2.0\docs\MySqlParameter.xml" t="Include" />
+    <e p="C:\Users\ballance\.nuget\packages\mysql.data\6.10.6\contentFiles\any\netcoreapp2.0\docs\MySqlParameterCollection.xml" t="Include" />
+    <e p="C:\Users\ballance\.nuget\packages\mysql.data\6.10.6\contentFiles\any\netcoreapp2.0\docs\MySqlTransaction.xml" t="Include" />
+    <e p="C:\Users\ballance\.nuget\packages\mysql.data\6.10.6\contentFiles\any\netcoreapp2.0\web.config.transform" t="Include" />
+    <e p="C:\Users\ballance\.Rider2017.3\system\resharper-host\local\Transient\ReSharperHost\v11\SolutionCaches\_Gps.614721499.00" t="ExcludeRecursive" />
+  </component>
+</project>
