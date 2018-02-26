@@ -12,16 +12,15 @@ namespace Gps.Api
 {
     public static class Program
     {
-        private static IConfiguration Configuration { get; set; }
         
         public static void Main(string[] args)
         {
-            var builder = new ConfigurationBuilder()
-                .SetBasePath(Directory.GetCurrentDirectory())
-                .AddJsonFile("appsettings.json")
-                .AddJsonFile("appsettings.prod.json");
-            
-            Configuration = builder.Build();
+//            var builder = new ConfigurationBuilder()
+//                .SetBasePath(Directory.GetCurrentDirectory())
+//                .AddJsonFile("appsettings.json")
+//                .AddJsonFile("appsettings.prod.json");
+//            
+//            Configuration = builder.Build();
             BuildWebHost(args).Run();
         }
 
