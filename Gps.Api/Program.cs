@@ -27,6 +27,7 @@ namespace Gps.Api
         public static IWebHost BuildWebHost(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
                 .UseStartup<Startup>()
+                .UseUrls("http://localhost:5001", "http://0.0.0.0:5001")
                 .Build();
     }
 }
