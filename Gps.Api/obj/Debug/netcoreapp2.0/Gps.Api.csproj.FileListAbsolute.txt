@@ -8,13 +8,13 @@ C:\home\code\GpsUdpReceiver\Gps.Api\obj\Debug\netcoreapp2.0\Gps.Api.AssemblyInfo
 C:\home\code\GpsUdpReceiver\Gps.Api\obj\Debug\netcoreapp2.0\Gps.Api.AssemblyInfo.cs
 C:\home\code\GpsUdpReceiver\Gps.Api\obj\Debug\netcoreapp2.0\Gps.Api.dll
 C:\home\code\GpsUdpReceiver\Gps.Api\obj\Debug\netcoreapp2.0\Gps.Api.pdb
-C:\home\code\gps\Gps.Api\bin\Debug\netcoreapp2.0\Gps.Api.dll
 C:\home\code\gps\Gps.Api\bin\Debug\netcoreapp2.0\Gps.Api.deps.json
 C:\home\code\gps\Gps.Api\bin\Debug\netcoreapp2.0\Gps.Api.runtimeconfig.json
 C:\home\code\gps\Gps.Api\bin\Debug\netcoreapp2.0\Gps.Api.runtimeconfig.dev.json
+C:\home\code\gps\Gps.Api\bin\Debug\netcoreapp2.0\Gps.Api.dll
+C:\home\code\gps\Gps.Api\bin\Debug\netcoreapp2.0\Gps.Api.pdb
 C:\home\code\gps\Gps.Api\obj\Debug\netcoreapp2.0\Gps.Api.csproj.CoreCompileInputs.cache
 C:\home\code\gps\Gps.Api\obj\Debug\netcoreapp2.0\Gps.Api.AssemblyInfoInputs.cache
 C:\home\code\gps\Gps.Api\obj\Debug\netcoreapp2.0\Gps.Api.AssemblyInfo.cs
 C:\home\code\gps\Gps.Api\obj\Debug\netcoreapp2.0\Gps.Api.dll
 C:\home\code\gps\Gps.Api\obj\Debug\netcoreapp2.0\Gps.Api.pdb
-C:\home\code\gps\Gps.Api\bin\Debug\netcoreapp2.0\Gps.Api.pdb
